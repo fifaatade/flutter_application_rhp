@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "417886583896",
+    "project_id": "reveal-her-potential",
+    "storage_bucket": "reveal-her-potential.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417886583896:android:dcb42a4fc9aa1449a01e2d",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_rhp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "417886583896-65ntj3gv7grfcg8t0lojq4kfmi6rob6r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxjcVc3wR6CCTe9VV40n6OZKzi65DLAgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "417886583896-65ntj3gv7grfcg8t0lojq4kfmi6rob6r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
