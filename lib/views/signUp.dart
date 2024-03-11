@@ -55,8 +55,8 @@ class _SignUpState extends State<SignUp> {
             TextField(
               controller: _usernameController,
               decoration: InputDecoration(
-                hintText: "Username",
-                labelText: "Votre Username",
+                hintText: "Enteprise/Organisme",
+                labelText: "Nom de l'organisme/enteprise",
                 prefixIcon: Icon(Icons.person),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -68,7 +68,7 @@ class _SignUpState extends State<SignUp> {
               controller: _emailController,
               decoration: InputDecoration(
                 hintText: "Email",
-                labelText: "Votre Email",
+                labelText: " Email",
                 prefixIcon: Icon(Icons.mail),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),

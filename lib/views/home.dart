@@ -8,20 +8,45 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+    bool loading = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(
-              "https://img.freepik.com/psd-gratuit/menu-nourriture-modele-banniere-web-delicieuses-pizzas_106176-419.jpg",
+      backgroundColor: Colors.black,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(height: 20),
+          TextField(
+              decoration: InputDecoration(
+            hintText: "Programme",
+            hintStyle: TextStyle(color: Colors.white),
+            labelText: "Nom du programme",
+            labelStyle: TextStyle(color: Colors.white),
+            prefixIcon: Icon(Icons.person),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
             ),
-            alignment: Alignment.topCenter,
-            fit: BoxFit.fitWidth,
-          ),
-        ),
-      )
-      );
+          )),
+          SizedBox(height: 20),
+          TextField(
+              decoration: InputDecoration(
+            hintText: "Description",
+            hintStyle: TextStyle(color: Colors.white),
+            labelText: "Description du programme",
+            labelStyle: TextStyle(color: Colors.white),
+            prefixIcon: Icon(Icons.person),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+          )),
+          SizedBox(height: 20),
+
+
+
+        ],
+      ),
+    );
   }
 }

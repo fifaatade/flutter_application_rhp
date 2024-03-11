@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_rhp/app/user_auth/firebase_auth_implementation/firabase_auth_services.dart';
 import 'package:flutter_application_rhp/views/signUp.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
 import 'home.dart';
 
@@ -52,8 +53,8 @@ class _LoginState extends State<Login> {
             TextField(
               controller: _emailController,
               decoration: InputDecoration(
-                hintText: "Login",
-                labelText: "Votre login",
+                hintText: "Email",
+                labelText: "Email",
                 prefixIcon: Icon(Icons.person),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -84,7 +85,9 @@ class _LoginState extends State<Login> {
               ),
             ),
             SizedBox(height: 20),
-            loading? Center(child: CircularProgressIndicator()) : ElevatedButton(child: Text("Se connecter"), onPressed: _signIn),
+            loading? Center(child: CircularProgressIndicator()) : 
+
+            ElevatedButton(child: Text("Se connecter"), onPressed: _signIn),
             SizedBox(height: 10),
             Container(
               child: GestureDetector(
@@ -135,13 +138,6 @@ class _LoginState extends State<Login> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: const Text("Identifiant ou mot de passe incorrecte"),
-          // duration: Duration(seconds: 2),
-          // action: SnackBarAction(
-          //   label: 'Action',
-          //   onPressed: () {
-          //     // Code to execute.
-          //   },
-          // ),
         ),
       );
     }
