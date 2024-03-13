@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_rhp/models/ob_model.dart';
-import 'package:flutter_application_rhp/views/login.dart';
+import 'package:flutter_application_rhp/views/auth/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Onboarding extends StatefulWidget {

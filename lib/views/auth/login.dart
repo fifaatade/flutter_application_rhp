@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_rhp/app/user_auth/firebase_auth_implementation/firabase_auth_services.dart';
-import 'package:flutter_application_rhp/views/signUp.dart';
+import 'package:flutter_application_rhp/views/auth/signUp.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
-import 'home.dart';
+import '../home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -44,7 +44,6 @@ class _LoginState extends State<Login> {
             ),
             Image.asset(
               "assets/images/logo.png",
-              color: Colors.purple,
             ),
             Text("Veuillez entrer votre mail et votre password! ",
             style: TextStyle(color: Colors.grey,),

@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_rhp/views/enter_app.dart';
-import 'package:flutter_application_rhp/views/home.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {

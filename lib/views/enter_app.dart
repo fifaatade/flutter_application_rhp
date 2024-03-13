@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_rhp/views/onboarding.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'home.dart';
 
-import 'login.dart';
+import 'auth/login.dart';
 
 class EnterApp extends StatefulWidget {
   const EnterApp({super.key});
@@ -20,14 +21,22 @@ class _EnterAppState extends State<EnterApp> {
       );
 
   @override
+  
   void initState() {
-    Timer(Duration(seconds: 3), () async {
+    Timer(Duration(seconds: 2), () async {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
       bool? isFirstTime = await prefs.getBool("isFirstTime");
+      bool? isFirstLogin = await prefs.getBool("isFirstLogin");
 
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(
           builder: (context) => isFirstTime == false ? Login() : Onboarding(),
+        ),
+        (route) => false,
+      );
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(
+          builder: (context) => isFirstLogin == false ? Login() : Home(),
         ),
         (route) => false,
       );
@@ -39,7 +48,6 @@ class _EnterAppState extends State<EnterApp> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromARGB(177, 9, 0, 10),
       body: Center(
         child: Image.asset(
           "assets/images/logo.png",

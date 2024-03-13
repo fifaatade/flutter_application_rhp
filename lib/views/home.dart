@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_rhp/views/entreprise/createProgram.dart';
+import 'package:get/get.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -8,45 +10,20 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-    bool loading = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: SingleChildScrollView(
+          child: Column(
         children: [
-          SizedBox(height: 20),
-          TextField(
-              decoration: InputDecoration(
-            hintText: "Programme",
-            hintStyle: TextStyle(color: Colors.white),
-            labelText: "Nom du programme",
-            labelStyle: TextStyle(color: Colors.white),
-            prefixIcon: Icon(Icons.person),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          )),
-          SizedBox(height: 20),
-          TextField(
-              decoration: InputDecoration(
-            hintText: "Description",
-            hintStyle: TextStyle(color: Colors.white),
-            labelText: "Description du programme",
-            labelStyle: TextStyle(color: Colors.white),
-            prefixIcon: Icon(Icons.person),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          )),
-          SizedBox(height: 20),
-
-
-
+          ElevatedButton(
+              child: Text("Créer un programme"),
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => CreateProgram()));
+              }),
         ],
-      ),
+      )),
     );
   }
 }
