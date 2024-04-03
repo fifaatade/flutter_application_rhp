@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../auth/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'enterprisePage.dart';
 
 class CreateProgram extends StatefulWidget {
   const CreateProgram({super.key});
@@ -12,7 +12,7 @@ class CreateProgram extends StatefulWidget {
 }
 
 class _CreateProgramState extends State<CreateProgram> {
-    bool loading = false;
+  bool loading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -46,20 +46,24 @@ class _CreateProgramState extends State<CreateProgram> {
             ),
           )),
           SizedBox(height: 20),
-
           ElevatedButton(
-            child: const Text("Sign Out"),
-            onPressed: () async{
-              FirebaseAuth.instance.signOut();
-              final SharedPreferences prefs = await SharedPreferences.getInstance();
-              await prefs.setBool("isFirstLogin", false);
-              Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(
-                    builder: (context) => const Login() ),
-                (route) => false,
-              );
-            }),
-
+              child: Text("Soumettre"),
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => EnterprisePage()));
+              }),
+          ElevatedButton(
+              child: const Text("Sign Out"),
+              onPressed: () async {
+                FirebaseAuth.instance.signOut();
+                final SharedPreferences prefs =
+                    await SharedPreferences.getInstance();
+                await prefs.setBool("isFirstLogin", false);
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => const Login()),
+                  (route) => false,
+                );
+              }),
         ],
       ),
     );
