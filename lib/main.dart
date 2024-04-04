@@ -20,10 +20,20 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black,
-          foregroundColor: Colors.purple,
+colorScheme: ColorScheme(
+            tertiary: Colors.white,
+            brightness: Brightness.light,
+            primary: const Color(0XFF94C11C),
+            onPrimary: const Color.fromARGB(255, 255, 255, 255),
+            onTertiary:  Colors.black,
+            secondary: const Color(0xFF000E35),
+            onSecondary: Colors.white,
+            error: Colors.red,
+            onError: Colors.white,
+            background: Colors.white,
+            onBackground: Colors.black,
+            surface: Colors.white,
+            onSurface: Colors.black),        appBarTheme: AppBarTheme(
         ),
         useMaterial3: true,
       ),

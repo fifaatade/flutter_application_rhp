@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_rhp/components/app_drawer.dart';
+import 'package:flutter_application_rhp/components/customAppBar.dart';
 import 'package:flutter_application_rhp/views/entreprise/createProgram.dart';
 import 'package:get/get.dart';
 
@@ -10,30 +12,16 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  var showall;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Home"),
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(60.0),
+        child: CustomAppBar(title: "Acceuil", goBack: false),
       ),
-      backgroundColor: Color.fromARGB(255, 224, 245, 252),
-      endDrawer: Drawer(
-          child: ListView(children: [
-        ListTile(
-            title: Text("Créer un programme"),
-            leading: Icon(Icons.domain_verification),
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => CreateProgram()),
-              );
-            }),
-        ListTile(
-            title: Text("Deconnexion"),
-            leading: Icon(Icons.logout),
-            onTap: () {
-              Navigator.of(context).pushNamed('/login');
-            })
-      ])),
+      backgroundColor: Color.fromARGB(14, 0, 0, 0),
+      endDrawer: AppDrawer(),
       body: SingleChildScrollView(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
@@ -44,12 +32,43 @@ class _HomeState extends State<Home> {
                 child: Row(children: [
                   ...[1, 2, 3]
                       .map((e) => Container(
-                          height: 150,
                           width: 300,
-                          color: Colors.white54,
                           child: Card(
-                              elevation: 0,
-                              child: Center(child: Text("hello")))))
+                            elevation: 0,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 20),
+                              child: Container(
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      "assets/images/logo.png",
+                                      width: 150,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    Text(
+                                      " data data data",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    Text.rich(
+                                      TextSpan( 
+                                      text:"datacdefvucygvsxhbj yuvoéezgudbjevyepvcb dgfeè_évc d fpi ràizdcp ylief",
+                                      overflow: TextOverflow.ellipsis, 
+                                      maxLines: 2,
+                                      
+                                      )
+                                      
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          )))
                       .toList()
                 ])),
             SizedBox(

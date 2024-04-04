@@ -1,5 +1,9 @@
 // import 'package:ded_mini_pos/views/HomeView.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_application_rhp/views/auth/login.dart';
+import 'package:flutter_application_rhp/views/entreprise/createProgram.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_application_rhp/components/methods.dart';
 
 class AppDrawer extends StatefulWidget {
@@ -21,7 +25,7 @@ class _AppDrawerState extends State<AppDrawer> {
   Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        dividerColor: Colors.white70,
+        dividerColor: Colors.grey[70],
       ),
       child: Drawer(
         width: 350,
@@ -57,7 +61,7 @@ class _AppDrawerState extends State<AppDrawer> {
                             "John Doe",
                             style: TextStyle(
                                 fontSize: 17.0,
-                                color: Colors.white.withOpacity(0.9),
+                                color: Colors.black.withOpacity(0.9),
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -73,7 +77,7 @@ class _AppDrawerState extends State<AppDrawer> {
                       const SizedBox(height: 10.0),
                       Padding(
                         padding: const EdgeInsets.only(left: 18.0),
-                        child: Text("Pages".toUpperCase(),
+                        child: Text("Entreprise".toUpperCase(),
                             style: const TextStyle(
                                 fontSize: 12.0,
                                 fontWeight: FontWeight.bold,
@@ -81,25 +85,29 @@ class _AppDrawerState extends State<AppDrawer> {
                       ),
                       const SizedBox(height: 20.0),
                       ListTile(
-                        textColor: Colors.white.withOpacity(0.9),
-                        iconColor: Colors.white.withOpacity(0.9),
+                        textColor: Colors.black.withOpacity(0.9),
+                        iconColor: Colors.black.withOpacity(0.9),
                         leading: const Icon(Icons.shopping_bag_outlined),
-                        title: Text('Encaisser une vente',
+                        title: Text('Créer un programme',
                             style: TextStyle(
                               fontSize: 17.0,
                             )),
-                        onTap: () {},
+                
+                        onTap: () {
+                          Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => CreateProgram()));
+                        },
                       ),
                       const Divider(
-                        color: Colors.white70,
+                        color: Colors.grey,
                         indent: 20,
                         endIndent: 20,
                       ),
                       Column(
                         children: [
                           ListTile(
-                            textColor: Colors.white.withOpacity(0.9),
-                            iconColor: Colors.white.withOpacity(0.9),
+                            textColor: Colors.black.withOpacity(0.9),
+                            iconColor: Colors.black.withOpacity(0.9),
                             leading: const Icon(Icons.category_outlined),
                             title: Text('Catalogue',
                                 style: TextStyle(
@@ -108,8 +116,8 @@ class _AppDrawerState extends State<AppDrawer> {
                             onTap: () {},
                           ),
                           ListTile(
-                            textColor: Colors.white.withOpacity(0.9),
-                            iconColor: Colors.white.withOpacity(0.9),
+                            textColor: Colors.black.withOpacity(0.9),
+                            iconColor: Colors.black.withOpacity(0.9),
                             leading: const Icon(Icons.group_outlined),
                             title: Text('Clients',
                                 style: TextStyle(
@@ -120,15 +128,15 @@ class _AppDrawerState extends State<AppDrawer> {
                         ],
                       ),
                       const Divider(
-                        color: Colors.white70,
+                        color: Colors.grey,
                         indent: 20,
                         endIndent: 20,
                       ),
                       Column(
                         children: [
                           ListTile(
-                            textColor: Colors.white.withOpacity(0.9),
-                            iconColor: Colors.white.withOpacity(0.9),
+                            textColor: Colors.black.withOpacity(0.9),
+                            iconColor: Colors.black.withOpacity(0.9),
                             leading: const Icon(Icons.receipt_long_outlined),
                             title: Text('Historique des ventes',
                                 style: TextStyle(
@@ -137,8 +145,8 @@ class _AppDrawerState extends State<AppDrawer> {
                             onTap: () {},
                           ),
                           ListTile(
-                            textColor: Colors.white.withOpacity(0.9),
-                            iconColor: Colors.white.withOpacity(0.9),
+                            textColor: Colors.black.withOpacity(0.9),
+                            iconColor: Colors.black.withOpacity(0.9),
                             leading: const Icon(Icons.dashboard_outlined),
                             title: Text('Statistiques',
                                 style: TextStyle(
@@ -156,8 +164,8 @@ class _AppDrawerState extends State<AppDrawer> {
                       Column(
                         children: [
                           ListTile(
-                            textColor: Colors.white.withOpacity(0.9),
-                            iconColor: Colors.white.withOpacity(0.9),
+                            textColor: Colors.black.withOpacity(0.9),
+                            iconColor: Colors.black.withOpacity(0.9),
                             leading: const Icon(Icons.settings_outlined),
                             title: Text('Paramètres',
                                 style: TextStyle(
@@ -169,14 +177,23 @@ class _AppDrawerState extends State<AppDrawer> {
                             },
                           ),
                           ListTile(
-                            textColor: Colors.white.withOpacity(0.9),
-                            iconColor: Colors.white.withOpacity(0.9),
+                            textColor: Colors.black.withOpacity(0.9),
+                            iconColor: Colors.black.withOpacity(0.9),
                             leading: const Icon(Icons.logout_outlined),
                             title: Text('Déconnexion',
                                 style: TextStyle(
                                   fontSize: 17.0,
                                 )),
-                            onTap: () {},
+                            onTap: () async{
+                                FirebaseAuth.instance.signOut();
+                                final SharedPreferences prefs =
+                                    await SharedPreferences.getInstance();
+                                await prefs.setBool("isFirstLogin", false);
+                                Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(builder: (context) => const Login()),
+                                  (route) => false,
+                                );
+                            },
                           ),
                         ],
                       ),

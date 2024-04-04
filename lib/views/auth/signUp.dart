@@ -163,6 +163,7 @@ class _SignUpState extends State<SignUp> {
     
     if (password == confirm) {
       User? user = await _auth.signUpWithEmailAndPassword(email, password);
+      
 
       if (user != null) {
         print("User is successfully created");

@@ -52,18 +52,7 @@ class _CreateProgramState extends State<CreateProgram> {
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => EnterprisePage()));
               }),
-          ElevatedButton(
-              child: const Text("Sign Out"),
-              onPressed: () async {
-                FirebaseAuth.instance.signOut();
-                final SharedPreferences prefs =
-                    await SharedPreferences.getInstance();
-                await prefs.setBool("isFirstLogin", false);
-                Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => const Login()),
-                  (route) => false,
-                );
-              }),
+          
         ],
       ),
     );
