@@ -87,7 +87,7 @@ class _AppDrawerState extends State<AppDrawer> {
                       ListTile(
                         textColor: Colors.black.withOpacity(0.9),
                         iconColor: Colors.black.withOpacity(0.9),
-                        leading: const Icon(Icons.shopping_bag_outlined),
+                        leading: const Icon(Icons.edit_note_sharp),
                         title: Text('Créer un programme',
                             style: TextStyle(
                               fontSize: 17.0,
@@ -108,8 +108,8 @@ class _AppDrawerState extends State<AppDrawer> {
                           ListTile(
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),
-                            leading: const Icon(Icons.category_outlined),
-                            title: Text('Catalogue',
+                            leading: const Icon(Icons.person_add_alt),
+                            title: Text('Ajouter un coach',
                                 style: TextStyle(
                                   fontSize: 17.0,
                                 )),
@@ -118,8 +118,8 @@ class _AppDrawerState extends State<AppDrawer> {
                           ListTile(
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),
-                            leading: const Icon(Icons.group_outlined),
-                            title: Text('Clients',
+                            leading: const Icon(Icons.person_add_alt_1_outlined),
+                            title: Text('Ajouter un bénéficiaire',
                                 style: TextStyle(
                                   fontSize: 17.0,
                                 )),
@@ -137,8 +137,8 @@ class _AppDrawerState extends State<AppDrawer> {
                           ListTile(
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),
-                            leading: const Icon(Icons.receipt_long_outlined),
-                            title: Text('Historique des ventes',
+                            leading: const Icon(Icons.chat_bubble_outline_outlined),
+                            title: Text('Démarrer une discussion',
                                 style: TextStyle(
                                   fontSize: 17.0,
                                 )),
@@ -147,13 +147,34 @@ class _AppDrawerState extends State<AppDrawer> {
                           ListTile(
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),
-                            leading: const Icon(Icons.dashboard_outlined),
-                            title: Text('Statistiques',
+                            leading: const Icon(Icons.group_outlined),
+                            title: Text('Communauté',
                                 style: TextStyle(
                                   fontSize: 17.0,
                                 )),
                             onTap: () {},
                           ),
+                          ListTile(
+                            textColor: Colors.black.withOpacity(0.9),
+                            iconColor: Colors.black.withOpacity(0.9),
+                            leading: const Icon(Icons.present_to_all_outlined),
+                            title: Text('Partager une ressource',
+                                style: TextStyle(
+                                  fontSize: 17.0,
+                                )),
+                            onTap: () {},
+                          ),
+                          ListTile(
+                            textColor: Colors.black.withOpacity(0.9),
+                            iconColor: Colors.black.withOpacity(0.9),
+                            leading: const Icon(Icons.share),
+                            title: Text('Partager une opportunité',
+                                style: TextStyle(
+                                  fontSize: 17.0,
+                                )),
+                            onTap: () {},
+                          ),
+                          
                         ],
                       ),
                       const Divider(
@@ -217,7 +238,7 @@ class _AppDrawerState extends State<AppDrawer> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'MA-INFO',
+                            'rhp',
                             style: TextStyle(
                                 fontSize: 15.0,
                                 color: Colors.white.withOpacity(0.9)),

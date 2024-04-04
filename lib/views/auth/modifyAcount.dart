@@ -15,7 +15,6 @@ class ModifyAcount extends StatefulWidget {
 
 class _ModifyAcountState extends State<ModifyAcount> {
     bool loading = false;
-  final FirebaseAuthService _auth = FirebaseAuthService();
 
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();

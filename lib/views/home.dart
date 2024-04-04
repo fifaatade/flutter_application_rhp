@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
                                     Row(
                                       children: [
                                         Text(
-                                          'ceci est une decription ceci est une decription ceci est une decription',
+                                          'ceci est une decription ceci est une decription ceci est une decription descriiptiooooooo',
                                           maxLines:
                                               show_all == false ? 2 : null,
                                           overflow: show_all == false
@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
                       MaterialPageRoute(builder: (context) => CreateProgram()));
                 },
                 child: Text(
-                  "Create Program",
+                  "Créer un programme",
                   style: TextStyle(color: Colors.white),
                 ))
           ],

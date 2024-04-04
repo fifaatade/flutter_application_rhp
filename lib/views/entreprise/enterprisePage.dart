@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_rhp/components/app_drawer.dart';
+import 'package:flutter_application_rhp/components/customAppBar.dart';
 
 
 class EnterprisePage extends StatefulWidget {
@@ -14,34 +16,14 @@ class _EnterprisePageState extends State<EnterprisePage> {
   
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(60.0),
+        child: CustomAppBar(title: "Programme", goBack: false),
+      ),
+      backgroundColor: Color.fromARGB(14, 0, 0, 0),
+      endDrawer: AppDrawer(),
       body: Container(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ListTile(
-              contentPadding: EdgeInsets.all(0),
-              leading: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.menu_sharp),
-                color: Color.fromARGB(255, 234, 231, 231),
-              ),
-              trailing: Container(
-                width: 30,
-                height: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  image: const DecorationImage(
-                      image: AssetImage("assets/images/profile.jpg"),
-                      fit: BoxFit.cover),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-          ],
-        ),
+        
         ),
     );
   }
