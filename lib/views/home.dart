@@ -12,7 +12,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  var showall;
+  var show_all;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,14 +55,23 @@ class _HomeState extends State<Home> {
                                     SizedBox(
                                       height: 5,
                                     ),
-                                    Text.rich(
-                                      TextSpan( 
-                                      text:"datacdefvucygvsxhbj yuvoéezgudbjevyepvcb dgfeè_évc d fpi ràizdcp ylief",
-                                      overflow: TextOverflow.ellipsis, 
-                                      maxLines: 2,
-                                      
-                                      )
-                                      
+                                    Row(
+                                      children: [
+                                        Text(
+                                          'ceci est une decription ceci est une decription ceci est une decription',
+                                          maxLines:
+                                              show_all == false ? 2 : null,
+                                          overflow: show_all == false
+                                              ? TextOverflow.ellipsis
+                                              : null,
+                                        ),
+                                        Text('Voir tout',
+                                            style: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 33, 47, 243),
+                                                decoration:
+                                                    TextDecoration.underline))
+                                      ],
                                     )
                                   ],
                                 ),
