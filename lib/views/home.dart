@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_rhp/components/app_drawer.dart';
 import 'package:flutter_application_rhp/components/customAppBar.dart';
+import 'package:flutter_application_rhp/views/auth/login.dart';
 import 'package:flutter_application_rhp/views/entreprise/createProgram.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -97,7 +100,18 @@ class _HomeState extends State<Home> {
                 child: Text(
                   "Créer un programme",
                   style: TextStyle(color: Colors.white),
-                ))
+                )),
+               const SizedBox(height: 20),
+                    ElevatedButton(
+                        child: const Text("Sign Out"),
+                        onPressed: () {
+                          FirebaseAuth.instance.signOut();
+                          Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(
+                                builder: (context) => const Login()),
+                            (route) => false,
+                          );
+                        }),
           ],
         ),
       )),

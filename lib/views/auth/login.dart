@@ -4,7 +4,6 @@ import 'package:flutter_application_rhp/app/user_auth/firebase_auth_implementati
 import 'package:flutter_application_rhp/views/auth/signUp.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import '../home.dart';
 
 class Login extends StatefulWidget {
