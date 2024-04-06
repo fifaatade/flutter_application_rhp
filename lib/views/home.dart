@@ -101,17 +101,6 @@ class _HomeState extends State<Home> {
                   "Créer un programme",
                   style: TextStyle(color: Colors.white),
                 )),
-               const SizedBox(height: 20),
-                    ElevatedButton(
-                        child: const Text("Sign Out"),
-                        onPressed: () {
-                          FirebaseAuth.instance.signOut();
-                          Navigator.of(context).pushAndRemoveUntil(
-                            MaterialPageRoute(
-                                builder: (context) => const Login()),
-                            (route) => false,
-                          );
-                        }),
           ],
         ),
       )),
