@@ -38,7 +38,7 @@ colorScheme: ColorScheme(
         ),
         useMaterial3: true,
       ),
-      home: const SignUp(),
+      home: const EnterApp(),
     );
   }
 }

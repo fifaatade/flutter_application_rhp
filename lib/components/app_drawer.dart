@@ -197,7 +197,7 @@ class _AppDrawerState extends State<AppDrawer> {
                               Navigator.pushReplacementNamed(context, '/sale');
                             },
                           ),
-                          ListTile(
+                          /* ListTile(
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),
                             leading: const Icon(Icons.logout_outlined),
@@ -215,7 +215,20 @@ class _AppDrawerState extends State<AppDrawer> {
                                   (route) => false,
                                 );
                             },
-                          ),
+                          ), */
+                          ElevatedButton(
+                            onPressed:  () async{
+                                FirebaseAuth.instance.signOut();
+                                final SharedPreferences prefs =
+                                    await SharedPreferences.getInstance();
+                                await prefs.setBool("isFirstLogin", false);
+                                Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(builder: (context) => const Login()),
+                                  (route) => false,
+                                );
+                            },
+                            child: const Text("Deconnexion"),
+                            ) ,
                         ],
                       ),
                     ],

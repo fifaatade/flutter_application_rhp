@@ -4,7 +4,6 @@ import 'package:firebase_database/firebase_database.dart';
 class FirestoreService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  // Replace with your collection name
   static const String collectionName = "users";
 
   Future<void> addData(Map<String, dynamic> data) async {
