@@ -67,7 +67,10 @@ class _HomeState extends State<Home> {
                   Text(
                     "What's RHP?",
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Kanit"),
                   ),
                   SizedBox(
                     height: 20,
@@ -82,7 +85,7 @@ class _HomeState extends State<Home> {
                       Expanded(
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                padding: EdgeInsets.symmetric(vertical: 20),
+                                padding: EdgeInsets.symmetric(vertical: 22),
                                 backgroundColor:
                                     Theme.of(context).colorScheme.primary,
                                 shape: RoundedRectangleBorder(

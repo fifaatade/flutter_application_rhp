@@ -39,7 +39,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
           : widget.colr,
       foregroundColor: Theme.of(context).colorScheme.onTertiary,
       iconTheme: IconThemeData(
-        size: 45.0,
+        size: 25.0,
         color: Theme.of(context).colorScheme.onTertiary,
       ),
       centerTitle: false,
