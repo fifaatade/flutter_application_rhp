@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme(
             tertiary: Colors.white,
             brightness: Brightness.light,
-            primary: const Color(0XFF94C11C),
+            primary: const Color(0xFF0a3622),
             onPrimary: const Color.fromARGB(255, 255, 255, 255),
             onTertiary: Colors.black,
             secondary: const Color(0xFF000E35),
@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
             onSurface: Colors.black),
         appBarTheme: AppBarTheme(),
         useMaterial3: true,
+        fontFamily: "Poppins",
       ),
       home: Home(),
     );

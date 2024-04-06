@@ -19,88 +19,88 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
-        child: CustomAppBar(title: "Acceuil", goBack: false),
+        child: CustomAppBar(
+          title: "Bonjour,",
+          goBack: false,
+          colr: Color(0xFF0a3622),
+        ),
       ),
-      backgroundColor: Color.fromARGB(14, 0, 0, 0),
+      backgroundColor: Color(0xFF0a3622),
       endDrawer: AppDrawer(),
       body: SingleChildScrollView(
           child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
+        padding: const EdgeInsets.symmetric(
+          vertical: 5,
+        ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(children: [
-                  ...[1, 2, 3]
-                      .map((e) => Container(
-                          width: 300,
-                          child: Card(
-                            elevation: 0,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 20),
-                              child: Container(
-                                child: Column(
-                                  children: [
-                                    Image.asset(
-                                      "assets/images/logo.png",
-                                      width: 150,
-                                      fit: BoxFit.cover,
-                                    ),
-                                    Text(
-                                      " data data data",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      height: 5,
-                                    ),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          'ceci est une decription ceci est une decription ceci est une decription descriiptiooooooo',
-                                          maxLines:
-                                              show_all == false ? 2 : null,
-                                          overflow: show_all == false
-                                              ? TextOverflow.ellipsis
-                                              : null,
-                                        ),
-                                        Text('Voir tout',
-                                            style: TextStyle(
-                                                color: Color.fromARGB(
-                                                    255, 33, 47, 243),
-                                                decoration:
-                                                    TextDecoration.underline))
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          )))
-                      .toList()
-                ])),
+            Center(
+              child: Container(
+                //decoration: BoxDecoration(
+                //     color: Colors.white,
+                //     borderRadius: BorderRadius.circular(15)),
+                width: MediaQuery.of(context).size.width * 0.5,
+                height: 150,
+                child: CircleAvatar(
+                  child: Image.asset("assets/images/logo.png"),
+                  backgroundColor: Colors.white,
+                ),
+              ),
+            ),
             SizedBox(
               height: 20,
             ),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+            Container(
+              height: 444,
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15))),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "What's RHP?",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                ),
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => CreateProgram()));
-                },
-                child: Text(
-                  "Créer un programme",
-                  style: TextStyle(color: Colors.white),
-                )),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'child 2: RenderDecoratedBox#bb475 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE  style: RenderPadding2d191 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATEchild: RenderFlex#4fbfb NEEDS-LAYOUT NEEDS-PAINT',
+                    textAlign: TextAlign.justify,
+                  ),
+                  Spacer(),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.symmetric(vertical: 20),
+                                backgroundColor:
+                                    Theme.of(context).colorScheme.primary,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20))),
+                            child: Text(
+                              "Creer un Programme",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => CreateProgram()));
+                            }),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       )),

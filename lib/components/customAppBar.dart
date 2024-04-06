@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.title, this.goBack});
+  CustomAppBar({super.key, required this.title, this.goBack, this.colr});
 
   final String title;
   final bool? goBack;
+  var colr;
 
   @override
   State<CustomAppBar> createState() => _CustomAppBarState();
@@ -16,18 +16,33 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _CustomAppBarState extends State<CustomAppBar> {
-  
-
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0,
+      actions: [
+        Builder(
+          builder: (context) => IconButton(
+            icon: Icon(
+              Icons.more_vert,
+              size: 25,
+              color: widget.colr != null ? Colors.white : null,
+            ),
+            onPressed: () => Scaffold.of(context).openEndDrawer(),
+            tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+          ),
+        ),
+      ],
       automaticallyImplyLeading: false,
-      backgroundColor: Theme.of(context).colorScheme.tertiary,
+      backgroundColor: widget.colr == null
+          ? Theme.of(context).colorScheme.tertiary
+          : widget.colr,
       foregroundColor: Theme.of(context).colorScheme.onTertiary,
       iconTheme: IconThemeData(
         size: 45.0,
         color: Theme.of(context).colorScheme.onTertiary,
       ),
+      centerTitle: false,
       title: Row(
         children: [
           Row(
@@ -39,33 +54,18 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     Navigator.pop(context);
                   },
                 ),
-              GestureDetector(
-                onTap: () {
-                },
-                child: Row(
-                  children: [
-                    Image.asset('assets/images/logo.png',
-                        width: 40.0, height: 40.0),
-                    const SizedBox(width: 15),
-                    
-                  ],
-                ),
-              ),
             ],
           ),
           Expanded(
-            child: Center(
-              child: Text(
-                widget.title.toUpperCase(),
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
+            child: Text(
+              widget.title,
+              style: TextStyle(
+                color: widget.colr != null ? Colors.white : null,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
               ),
             ),
           ),
-          
-
         ],
       ),
       toolbarHeight: 80.0,

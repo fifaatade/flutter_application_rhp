@@ -19,12 +19,13 @@ class _CreateProgramState extends State<CreateProgram> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
         child: CustomAppBar(title: "CRÉER UN PROGRAMME", goBack: true),
       ),
       backgroundColor: Color.fromARGB(14, 0, 0, 0),
-      endDrawer: AppDrawer(),      body: Column(
+      endDrawer: AppDrawer(),
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(height: 20),
@@ -64,7 +65,6 @@ class _CreateProgramState extends State<CreateProgram> {
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => EnterprisePage()));
               }),
-          
         ],
       ),
     );
