@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+/* import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 class FirestoreService {
@@ -26,3 +26,4 @@ class FirestoreService {
     await addData(data);
   }
 }
+ */
