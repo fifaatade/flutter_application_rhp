@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application_rhp/views/auth/login.dart';
+import 'package:flutter_application_rhp/views/beneficiaire/connBenef.dart';
 import 'package:flutter_application_rhp/views/beneficiaire/inscriptionBenef.dart';
 import 'package:flutter_application_rhp/views/coachs/inscriptionCoach.dart';
 import 'package:flutter_application_rhp/views/entreprise/addRessource.dart';
@@ -81,7 +82,7 @@ class _AppDrawerState extends State<AppDrawer> {
                       const SizedBox(height: 10.0),
                       Padding(
                         padding: const EdgeInsets.only(left: 18.0),
-                        child: Text("Entreprise".toUpperCase(),
+                        child: Text("Bénéficiaire".toUpperCase(),
                             style: const TextStyle(
                                 fontSize: 12.0,
                                 fontWeight: FontWeight.bold,
@@ -91,8 +92,8 @@ class _AppDrawerState extends State<AppDrawer> {
                       ListTile(
                         textColor: Colors.black.withOpacity(0.9),
                         iconColor: Colors.black.withOpacity(0.9),
-                        leading: const Icon(Icons.edit_note_sharp),
-                        title: Text('Créer un programme',
+                        leading: const Icon(Icons.video_call_outlined),
+                        title: Text('coaching',
                             style: TextStyle(
                               fontSize: 17.0,
                             )),
@@ -107,43 +108,7 @@ class _AppDrawerState extends State<AppDrawer> {
                         indent: 20,
                         endIndent: 20,
                       ),
-                      Column(
-                        children: [
-                          ListTile(
-                            textColor: Colors.black.withOpacity(0.9),
-                            iconColor: Colors.black.withOpacity(0.9),
-                            leading: const Icon(Icons.person_add_alt),
-                            title: Text('Ajouter un coach',
-                                style: TextStyle(
-                                  fontSize: 17.0,
-                                )),
-                            onTap: () {
-                              Navigator.of(context).push(
-                                  MaterialPageRoute(builder: (context) => const InscriptionCoach()),
-                                );
-                            },
-                          ),
-                          ListTile(
-                            textColor: Colors.black.withOpacity(0.9),
-                            iconColor: Colors.black.withOpacity(0.9),
-                            leading: const Icon(Icons.person_add_alt_1_outlined),
-                            title: Text('Ajouter un bénéficiaire',
-                                style: TextStyle(
-                                  fontSize: 17.0,
-                                )),
-                            onTap: () {
-                              Navigator.of(context).push(
-                                  MaterialPageRoute(builder: (context) => const InscriptionBenef()),
-                                );
-                            },
-                          ),
-                        ],
-                      ),
-                      const Divider(
-                        color: Colors.grey,
-                        indent: 20,
-                        endIndent: 20,
-                      ),
+                     
                       Column(
                         children: [
                           ListTile(
@@ -170,7 +135,7 @@ class _AppDrawerState extends State<AppDrawer> {
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),
                             leading: const Icon(Icons.present_to_all_outlined),
-                            title: Text('Partager une ressource',
+                            title: Text(' Ressources',
                                 style: TextStyle(
                                   fontSize: 17.0,
                                 )),
@@ -184,7 +149,7 @@ class _AppDrawerState extends State<AppDrawer> {
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),
                             leading: const Icon(Icons.share),
-                            title: Text('Partager une opportunité',
+                            title: Text('Opportunités',
                                 style: TextStyle(
                                   fontSize: 17.0,
                                 )),
@@ -231,7 +196,7 @@ class _AppDrawerState extends State<AppDrawer> {
                                     await SharedPreferences.getInstance();
                                 await prefs.setBool("isFirstLogin", false);
                                 Navigator.of(context).pushAndRemoveUntil(
-                                  MaterialPageRoute(builder: (context) => const Login()),
+                                  MaterialPageRoute(builder: (context) => const ConnBenef()),
                                   (route) => false,
                                 );
                             },

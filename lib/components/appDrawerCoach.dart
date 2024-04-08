@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application_rhp/views/auth/login.dart';
 import 'package:flutter_application_rhp/views/beneficiaire/inscriptionBenef.dart';
+import 'package:flutter_application_rhp/views/coachs/connCoach.dart';
 import 'package:flutter_application_rhp/views/coachs/inscriptionCoach.dart';
 import 'package:flutter_application_rhp/views/entreprise/addRessource.dart';
 import 'package:flutter_application_rhp/views/entreprise/createProgram.dart';
@@ -81,7 +82,7 @@ class _AppDrawerState extends State<AppDrawer> {
                       const SizedBox(height: 10.0),
                       Padding(
                         padding: const EdgeInsets.only(left: 18.0),
-                        child: Text("Entreprise".toUpperCase(),
+                        child: Text("Coach".toUpperCase(),
                             style: const TextStyle(
                                 fontSize: 12.0,
                                 fontWeight: FontWeight.bold,
@@ -91,8 +92,8 @@ class _AppDrawerState extends State<AppDrawer> {
                       ListTile(
                         textColor: Colors.black.withOpacity(0.9),
                         iconColor: Colors.black.withOpacity(0.9),
-                        leading: const Icon(Icons.edit_note_sharp),
-                        title: Text('Créer un programme',
+                        leading: const Icon(Icons.video_call),
+                        title: Text('Ajouter une séance de coaching',
                             style: TextStyle(
                               fontSize: 17.0,
                             )),
@@ -109,20 +110,7 @@ class _AppDrawerState extends State<AppDrawer> {
                       ),
                       Column(
                         children: [
-                          ListTile(
-                            textColor: Colors.black.withOpacity(0.9),
-                            iconColor: Colors.black.withOpacity(0.9),
-                            leading: const Icon(Icons.person_add_alt),
-                            title: Text('Ajouter un coach',
-                                style: TextStyle(
-                                  fontSize: 17.0,
-                                )),
-                            onTap: () {
-                              Navigator.of(context).push(
-                                  MaterialPageRoute(builder: (context) => const InscriptionCoach()),
-                                );
-                            },
-                          ),
+                         
                           ListTile(
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),
@@ -231,7 +219,7 @@ class _AppDrawerState extends State<AppDrawer> {
                                     await SharedPreferences.getInstance();
                                 await prefs.setBool("isFirstLogin", false);
                                 Navigator.of(context).pushAndRemoveUntil(
-                                  MaterialPageRoute(builder: (context) => const Login()),
+                                  MaterialPageRoute(builder: (context) => const ConnCoach()),
                                   (route) => false,
                                 );
                             },

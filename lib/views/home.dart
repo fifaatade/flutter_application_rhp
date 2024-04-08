@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20))),
                             child: Text(
-                              "Creer un Programme",
+                              "Créer un Programme",
                               style: TextStyle(color: Colors.white),
                             ),
                             onPressed: () {
