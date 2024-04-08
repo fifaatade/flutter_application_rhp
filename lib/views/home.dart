@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
                     height: 20,
                   ),
                   Text(
-                    'child 2: RenderDecoratedBox#bb475 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE  style: RenderPadding2d191 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATEchild: RenderFlex#4fbfb NEEDS-LAYOUT NEEDS-PAINT',
+                    "Cette application vise à assurer le suivi et l'accompagnement des filles après leur participation au programme Reveal Her Potential. L’utilisateur dans cette application  se retrouve dans un espace convivial où les bénéficaires continuent d’accéder à un soutien et un appuie constant pour la réalisation effective de leur objectif entreprenarial.",
                     textAlign: TextAlign.justify,
                   ),
                   Spacer(),
