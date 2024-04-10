@@ -21,7 +21,7 @@ class _ShareOpportunitieState extends State<ShareOpportunitie> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
-        child: CustomAppBar(title: "Partager une ressource", goBack: true),
+        child: CustomAppBar(title: "Partage d'opportunité", goBack: true),
       ),
       backgroundColor: Color(0xFFe3ecf1),
       endDrawer: AppDrawer(),
@@ -37,7 +37,7 @@ class _ShareOpportunitieState extends State<ShareOpportunitie> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Partager une ressource",
+                    "Partager une opportunité",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 20),
