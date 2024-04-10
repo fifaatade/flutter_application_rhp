@@ -11,14 +11,14 @@ import 'package:flutter_application_rhp/views/entreprise/shareOpportunities.dart
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_application_rhp/components/methods.dart';
 
-class AppDrawer extends StatefulWidget {
-  const AppDrawer({super.key});
+class AppDrawerBenef extends StatefulWidget {
+  const AppDrawerBenef({super.key});
 
   @override
-  State<AppDrawer> createState() => _AppDrawerState();
+  State<AppDrawerBenef> createState() => _AppDrawerBenefState();
 }
 
-class _AppDrawerState extends State<AppDrawer> {
+class _AppDrawerBenefState extends State<AppDrawerBenef> {
   // String fullName = Config.getFullName();
 
   @override
