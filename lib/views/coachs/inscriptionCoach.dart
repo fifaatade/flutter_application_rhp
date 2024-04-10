@@ -44,7 +44,7 @@ class _InscriptionCoachState extends State<InscriptionCoach> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
         child: CustomAppBar(
-          title: "Bonjour,",
+          title: "Ajout de coach",
           goBack: true,
           colr: Color(0xFF0a3622),
         ),

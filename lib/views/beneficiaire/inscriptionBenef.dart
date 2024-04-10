@@ -15,7 +15,7 @@ class InscriptionBenef extends StatefulWidget {
 }
 
 class _InscriptionBenefState extends State<InscriptionBenef> {
-   bool loading = false;
+  bool loading = false;
   final FirebaseAuthService _auth = FirebaseAuthService();
 
   TextEditingController _firstnameController = TextEditingController();
@@ -40,11 +40,11 @@ class _InscriptionBenefState extends State<InscriptionBenef> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
         child: CustomAppBar(
-          title: "Bonjour,",
+          title: "Ajout de bénéficiaire",
           goBack: true,
           colr: Color(0xFF0a3622),
         ),
@@ -222,9 +222,9 @@ class _InscriptionBenefState extends State<InscriptionBenef> {
         ),
       ),
     );
- 
   }
-   void _signUp() async {
+
+  void _signUp() async {
     setState(() {
       loading = true;
     });
@@ -232,7 +232,7 @@ class _InscriptionBenefState extends State<InscriptionBenef> {
     String firstname = _firstnameController.text;
 
     String lastname = _lastnameController.text;
-    
+
     String birthday = _birthdayController.text;
 
     String email = _emailController.text;
@@ -259,4 +259,3 @@ class _InscriptionBenefState extends State<InscriptionBenef> {
     });
   }
 }
-
