@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application_rhp/components/app_drawer.dart';
 import 'package:flutter_application_rhp/components/customAppBar.dart';
 import 'package:flutter_application_rhp/views/auth/login.dart';
+import 'package:flutter_application_rhp/views/beneficiaire/connBenef.dart';
 import 'package:get/get.dart';
 import '../home.dart';
 
@@ -247,7 +248,7 @@ class _InscriptionBenefState extends State<InscriptionBenef> {
       if (user != null) {
         print("User is successfully created");
         Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => const Login()),
+          MaterialPageRoute(builder: (context) => const ConnBenef()),
           (route) => false,
         );
       } else {

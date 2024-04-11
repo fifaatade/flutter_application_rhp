@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_rhp/app/user_auth/firebase_auth_implementation/firabase_auth_services.dart';
 import 'package:flutter_application_rhp/views/auth/signUp.dart';
+import 'package:flutter_application_rhp/views/coachs/coach.dart';
 import 'package:flutter_application_rhp/views/coachs/inscriptionCoach.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
@@ -163,7 +164,7 @@ void _signIn() async {
     if (user != null) {
       print("User is successfully created");
       Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => const Home()),
+        MaterialPageRoute(builder: (context) => const Coach()),
         (route) => false,
       );
     } else {

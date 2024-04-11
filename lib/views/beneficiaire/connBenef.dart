@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_rhp/app/user_auth/firebase_auth_implementation/firabase_auth_services.dart';
 import 'package:flutter_application_rhp/views/auth/signUp.dart';
+import 'package:flutter_application_rhp/views/beneficiaire/benef.dart';
 import 'package:flutter_application_rhp/views/beneficiaire/inscriptionBenef.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
@@ -164,7 +165,7 @@ class _ConnBenefState extends State<ConnBenef> {
     if (user != null) {
       print("User is successfully created");
       Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => const Home()),
+        MaterialPageRoute(builder: (context) => const Benef()),
         (route) => false,
       );
     } else {
