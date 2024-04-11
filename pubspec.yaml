@@ -39,6 +39,7 @@ dependencies:
   #cloud_firestore: ^4.15.8
   get: ^4.6.6
   stream_video_flutter: ^0.3.6
+  jitsi_meet_flutter_sdk: ^0.3.0
 
 dev_dependencies:
   flutter_test:

@@ -6,6 +6,7 @@ import 'package:flutter_application_rhp/views/beneficiaire/inscriptionBenef.dart
 import 'package:flutter_application_rhp/views/coachs/addCoaching.dart';
 import 'package:flutter_application_rhp/views/coachs/connCoach.dart';
 import 'package:flutter_application_rhp/views/coachs/inscriptionCoach.dart';
+import 'package:flutter_application_rhp/views/connection_side.dart';
 import 'package:flutter_application_rhp/views/entreprise/addRessource.dart';
 import 'package:flutter_application_rhp/views/entreprise/createProgram.dart';
 import 'package:flutter_application_rhp/views/entreprise/shareOpportunities.dart';
@@ -98,13 +99,35 @@ class _AppDrawerCoachState extends State<AppDrawerCoach> {
                             style: TextStyle(
                               fontSize: 17.0,
                             )),
-                
                         onTap: () {
                           Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => AddCoaching()));
+                      MaterialPageRoute(builder: (context) => CreateProgram()));
                         },
                       ),
-                      
+                      const Divider(
+                        color: Colors.grey,
+                        indent: 20,
+                        endIndent: 20,
+                      ),
+                      Column(
+                        children: [
+                         
+                          ListTile(
+                            textColor: Colors.black.withOpacity(0.9),
+                            iconColor: Colors.black.withOpacity(0.9),
+                            leading: const Icon(Icons.person_add_alt_1_outlined),
+                            title: Text('Ajouter un bénéficiaire',
+                                style: TextStyle(
+                                  fontSize: 17.0,
+                                )),
+                            onTap: () {
+                              Navigator.of(context).push(
+                                  MaterialPageRoute(builder: (context) => const InscriptionBenef()),
+                                );
+                            },
+                          ),
+                        ],
+                      ),
                       const Divider(
                         color: Colors.grey,
                         indent: 20,
@@ -115,7 +138,8 @@ class _AppDrawerCoachState extends State<AppDrawerCoach> {
                           ListTile(
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),
-                            leading: const Icon(Icons.chat_bubble_outline_outlined),
+                            leading:
+                                const Icon(Icons.chat_bubble_outline_outlined),
                             title: Text('Démarrer une discussion',
                                 style: TextStyle(
                                   fontSize: 17.0,
@@ -142,8 +166,9 @@ class _AppDrawerCoachState extends State<AppDrawerCoach> {
                                 )),
                             onTap: () {
                               Navigator.of(context).push(
-                                  MaterialPageRoute(builder: (context) => const AddRessource()),
-                                );
+                                MaterialPageRoute(
+                                    builder: (context) => const AddRessource()),
+                              );
                             },
                           ),
                           ListTile(
@@ -156,11 +181,12 @@ class _AppDrawerCoachState extends State<AppDrawerCoach> {
                                 )),
                             onTap: () {
                               Navigator.of(context).push(
-                                  MaterialPageRoute(builder: (context) => const ShareOpportunitie()),
-                                );
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ShareOpportunitie()),
+                              );
                             },
                           ),
-                          
                         ],
                       ),
                       const Divider(
@@ -191,17 +217,19 @@ class _AppDrawerCoachState extends State<AppDrawerCoach> {
                                 style: TextStyle(
                                   fontSize: 17.0,
                                 )),
-                            onTap: () async{
-                                FirebaseAuth.instance.signOut();
-                                final SharedPreferences prefs =
-                                    await SharedPreferences.getInstance();
-                                await prefs.setBool("isFirstLogin", false);
-                                Navigator.of(context).pushAndRemoveUntil(
-                                  MaterialPageRoute(builder: (context) => const ConnCoach()),
-                                  (route) => false,
-                                );
+                            onTap: () async {
+                              FirebaseAuth.instance.signOut();
+                              final SharedPreferences prefs =
+                                  await SharedPreferences.getInstance();
+                              await prefs.setBool("isFirstLogin", false);
+                              Navigator.of(context).pushAndRemoveUntil(
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ConnexionSide()),
+                                (route) => false,
+                              );
                             },
-                          ), 
+                          ),
                         ],
                       ),
                     ],
