@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter_application_rhp/views/connection_side.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_rhp/views/onboarding.dart';
@@ -21,7 +22,6 @@ class _EnterAppState extends State<EnterApp> {
       );
 
   @override
-  
   void initState() {
     Timer(Duration(seconds: 2), () async {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -30,13 +30,15 @@ class _EnterAppState extends State<EnterApp> {
 
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(
-          builder: (context) => isFirstTime == false ? Login() : Onboarding(),
+          builder: (context) =>
+              isFirstTime == false ? ConnexionSide() : Onboarding(),
         ),
         (route) => false,
       );
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(
-          builder: (context) => isFirstLogin == false ? Login() : Home(),
+          builder: (context) =>
+              isFirstLogin == false ? ConnexionSide() : Home(),
         ),
         (route) => false,
       );
