@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_rhp/app/user_auth/firebase_auth_implementation/firabase_auth_services.dart';
 import 'package:flutter_application_rhp/views/auth/signUp.dart';
+import 'package:flutter_application_rhp/views/beneficiaire/inscriptionBenef.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
 import '../home.dart';
@@ -138,32 +139,7 @@ class _ConnBenefState extends State<ConnBenef> {
                             ],
                           ),
                     SizedBox(height: 10),
-                    Container(
-                      child: GestureDetector(
-                        onTap: () {
-                          // Lorsque le texte est tapé, naviguer vers la page de connexion
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => SignUp()),
-                          );
-                        },
-                        child: Text.rich(TextSpan(
-                            text: "Vous n'avez pas de compte ?",
-                            style: TextStyle(
-                              color: Colors.grey,
-                              decoration: TextDecoration.underline,
-                            ),
-                            children: [
-                              TextSpan(
-                                text: " Inscrivez-vous",
-                                style: TextStyle(
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
-                                    fontWeight: FontWeight.bold),
-                              )
-                            ])),
-                      ),
-                    ),
+                    
                   ],
                 )),
           ],

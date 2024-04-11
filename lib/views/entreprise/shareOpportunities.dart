@@ -77,8 +77,7 @@ class _ShareOpportunitieState extends State<ShareOpportunitie> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                         decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(
-                          vertical: 50.0, horizontal: 10.0),
+                      
                       hintText: "Document",
                       hintStyle: TextStyle(color: Colors.black),
                       labelText: "Ajouter un lien",
