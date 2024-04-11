@@ -23,80 +23,86 @@ class _ConnexionSideState extends State<ConnexionSide> {
       backgroundColor: Color(0xFF0a3622),
       body: Container(
         padding: EdgeInsets.all(20),
-        child: Column(
-          children: [
-            Text(
-              "Veuillez choisir votre profile",
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Expanded(
-                child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Login(),
-                ));
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15)),
-                child: Center(
-                  child: Text(
-                    'Je suis une entreprise',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Text(
+                "Veuillez choisir votre profile",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Expanded(
+                  child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => Login(),
+                  ));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Center(
+                    child: Text(
+                      'Je suis une entreprise',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
                   ),
                 ),
+              )),
+              SizedBox(
+                height: 30,
               ),
-            )),
-            SizedBox(
-              height: 15,
-            ),
-            Expanded(
-                child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ConnCoach(),
-                ));
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15)),
-                child: Center(
-                  child: Text(
-                    'Je suis un coach',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              Expanded(
+                  child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ConnCoach(),
+                  ));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Center(
+                    child: Text(
+                      'Je suis un coach',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
                   ),
                 ),
+              )),
+              SizedBox(
+                height: 30,
               ),
-            )),
-            SizedBox(
-              height: 15,
-            ),
-            Expanded(
-                child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ConnBenef(),
-                ));
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15)),
-                child: Center(
-                  child: Text(
-                    'Je suis un bénéficiaire',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              Expanded(
+                  child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ConnBenef(),
+                  ));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Center(
+                    child: Text(
+                      'Je suis un bénéficiaire',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
                   ),
                 ),
-              ),
-            ))
-          ],
+              ))
+            ],
+          ),
         ),
       ),
     );
