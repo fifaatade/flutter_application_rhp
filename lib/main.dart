@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_rhp/views/auth/login.dart';
 import 'package:flutter_application_rhp/views/auth/signUp.dart';
+import 'package:flutter_application_rhp/views/connection_side.dart';
 import 'package:flutter_application_rhp/views/enter_app.dart';
 import 'package:flutter_application_rhp/views/home.dart';
 import 'firebase_options.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: "Poppins",
       ),
-      home: EnterApp(),
+      home: ConnexionSide(),
     );
   }
 }
