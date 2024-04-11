@@ -63,7 +63,7 @@ class _ConnCoachState extends State<ConnCoach> {
                 child: Column(
                   children: [
                     Text(
-                      "Connexion",
+                      "Connexion Coach",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 30,
@@ -134,7 +134,7 @@ class _ConnCoachState extends State<ConnCoach> {
                                       "Se connecter",
                                       style: TextStyle(color: Colors.white),
                                     ),
-                                    onPressed: _signIn),
+                                    onPressed: _signInC),
                               ),
                             ],
                           ),
@@ -148,7 +148,7 @@ class _ConnCoachState extends State<ConnCoach> {
     );
  
   }
-void _signIn() async {
+void _signInC() async {
     setState(() {
       loading = true;
     });

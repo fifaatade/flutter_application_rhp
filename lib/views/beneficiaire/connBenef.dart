@@ -64,7 +64,7 @@ class _ConnBenefState extends State<ConnBenef> {
                 child: Column(
                   children: [
                     Text(
-                      "Connexion",
+                      "Connexion bénéficiaire",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 30,
@@ -135,7 +135,7 @@ class _ConnBenefState extends State<ConnBenef> {
                                       "Se connecter",
                                       style: TextStyle(color: Colors.white),
                                     ),
-                                    onPressed: _signIn),
+                                    onPressed: _signInB),
                               ),
                             ],
                           ),
@@ -149,7 +149,7 @@ class _ConnBenefState extends State<ConnBenef> {
     );
  
   }
-  void _signIn() async {
+  void _signInB() async {
     setState(() {
       loading = true;
     });
