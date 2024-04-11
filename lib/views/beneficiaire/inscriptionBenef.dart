@@ -121,6 +121,12 @@ class _InscriptionBenefState extends State<InscriptionBenef> {
                     SizedBox(height: 20),
                     TextField(
                       controller: _birthdayController,
+                      // enabled: false,
+                      onTap: () {
+                        _showPickerDialog(
+                          context,
+                        );
+                      },
                       decoration: InputDecoration(
                         hintText: "Date d'anniversaire",
                         labelText: "anniversaire",
@@ -258,5 +264,29 @@ class _InscriptionBenefState extends State<InscriptionBenef> {
     setState(() {
       loading = false;
     });
+  }
+
+  Future<void> _showPickerDialog(
+    BuildContext context,
+  ) async {
+    Locale myLocale = Localizations.localeOf(context);
+
+    DateTime? pickedDate = await showDatePicker(
+      context: context,
+      firstDate: DateTime(DateTime.now().year - 10),
+      lastDate: DateTime(DateTime.now().year + 10),
+      builder: (BuildContext context, Widget? child) {
+        return Theme(
+          data: ThemeData.light().copyWith(
+            colorScheme: ColorScheme.light(
+              primary:
+                  Colors.blue, // Couleur du texte dans le sélecteur de date
+              onPrimary: Colors.white, // Couleur de fond du sélecteur de date
+            ),
+          ),
+          child: child!,
+        );
+      },
+    );
   }
 }
