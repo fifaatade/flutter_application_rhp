@@ -63,7 +63,7 @@ class _CoachState extends State<Coach> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "What's RHP?",
+                    "C'est quoi RHP?",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 25,
