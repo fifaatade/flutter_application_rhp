@@ -63,7 +63,7 @@ class _BenefState extends State<Benef> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "What's RHP?",
+                    "C'est quoi RHP?",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 25,

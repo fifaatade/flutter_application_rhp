@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
         child: CustomAppBar(
-          title: "Bonjour,",
+          title: "Hey,",
           goBack: false,
           colr: Color(0xFF0a3622),
         ),
@@ -65,7 +65,7 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "What's RHP?",
+                    "C'est quoi?",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 25,

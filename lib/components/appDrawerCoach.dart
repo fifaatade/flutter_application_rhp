@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application_rhp/views/auth/login.dart';
 import 'package:flutter_application_rhp/views/beneficiaire/inscriptionBenef.dart';
+import 'package:flutter_application_rhp/views/coachs/addCoaching.dart';
 import 'package:flutter_application_rhp/views/coachs/connCoach.dart';
 import 'package:flutter_application_rhp/views/coachs/inscriptionCoach.dart';
 import 'package:flutter_application_rhp/views/connection_side.dart';
@@ -99,8 +100,8 @@ class _AppDrawerCoachState extends State<AppDrawerCoach> {
                               fontSize: 17.0,
                             )),
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => CreateProgram()));
+                          Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => CreateProgram()));
                         },
                       ),
                       const Divider(
@@ -110,21 +111,19 @@ class _AppDrawerCoachState extends State<AppDrawerCoach> {
                       ),
                       Column(
                         children: [
+                         
                           ListTile(
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),
-                            leading:
-                                const Icon(Icons.person_add_alt_1_outlined),
+                            leading: const Icon(Icons.person_add_alt_1_outlined),
                             title: Text('Ajouter un bénéficiaire',
                                 style: TextStyle(
                                   fontSize: 17.0,
                                 )),
                             onTap: () {
                               Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const InscriptionBenef()),
-                              );
+                                  MaterialPageRoute(builder: (context) => const InscriptionBenef()),
+                                );
                             },
                           ),
                         ],
