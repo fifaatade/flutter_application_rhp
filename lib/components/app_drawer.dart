@@ -54,7 +54,7 @@ class _AppDrawerState extends State<AppDrawer> {
                       CircleAvatar(
                         radius: 30.0,
                         child: Text(
-                          getInitials("John Doe"),
+                          getInitials("the SPACE"),
                           style: const TextStyle(fontSize: 20),
                         ),
                       ),
@@ -64,7 +64,7 @@ class _AppDrawerState extends State<AppDrawer> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "John Doe",
+                            "theSPACE",
                             style: TextStyle(
                                 fontSize: 17.0,
                                 color: Colors.black.withOpacity(0.9),
@@ -217,19 +217,7 @@ class _AppDrawerState extends State<AppDrawer> {
                       ),
                       Column(
                         children: [
-                          ListTile(
-                            textColor: Colors.black.withOpacity(0.9),
-                            iconColor: Colors.black.withOpacity(0.9),
-                            leading: const Icon(Icons.settings_outlined),
-                            title: Text('Paramètres',
-                                style: TextStyle(
-                                  fontSize: 17.0,
-                                )),
-                            onTap: () {
-                              Navigator.pop(context);
-                              Navigator.pushReplacementNamed(context, '/sale');
-                            },
-                          ),
+                         
                           ListTile(
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),

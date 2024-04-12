@@ -56,7 +56,7 @@ class _AppDrawerCoachState extends State<AppDrawerCoach> {
                       CircleAvatar(
                         radius: 30.0,
                         child: Text(
-                          getInitials("John Doe"),
+                          getInitials("Mathilde Rice"),
                           style: const TextStyle(fontSize: 20),
                         ),
                       ),
@@ -66,7 +66,7 @@ class _AppDrawerCoachState extends State<AppDrawerCoach> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "John Doe",
+                            "Mathilde Rice",
                             style: TextStyle(
                                 fontSize: 17.0,
                                 color: Colors.black.withOpacity(0.9),
@@ -102,34 +102,8 @@ class _AppDrawerCoachState extends State<AppDrawerCoach> {
                             )),
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => CreateProgram()));
+                              builder: (context) => AddCoaching()));
                         },
-                      ),
-                      const Divider(
-                        color: Colors.grey,
-                        indent: 20,
-                        endIndent: 20,
-                      ),
-                      Column(
-                        children: [
-                          ListTile(
-                            textColor: Colors.black.withOpacity(0.9),
-                            iconColor: Colors.black.withOpacity(0.9),
-                            leading:
-                                const Icon(Icons.person_add_alt_1_outlined),
-                            title: Text('Ajouter un bénéficiaire',
-                                style: TextStyle(
-                                  fontSize: 17.0,
-                                )),
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const InscriptionBenef()),
-                              );
-                            },
-                          ),
-                        ],
                       ),
                       const Divider(
                         color: Colors.grey,
@@ -206,19 +180,6 @@ class _AppDrawerCoachState extends State<AppDrawerCoach> {
                           ListTile(
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),
-                            leading: const Icon(Icons.settings_outlined),
-                            title: Text('Paramètres',
-                                style: TextStyle(
-                                  fontSize: 17.0,
-                                )),
-                            onTap: () {
-                              Navigator.pop(context);
-                              Navigator.pushReplacementNamed(context, '/sale');
-                            },
-                          ),
-                          ListTile(
-                            textColor: Colors.black.withOpacity(0.9),
-                            iconColor: Colors.black.withOpacity(0.9),
                             leading: const Icon(Icons.logout_outlined),
                             title: Text('Déconnexion',
                                 style: TextStyle(
@@ -228,7 +189,7 @@ class _AppDrawerCoachState extends State<AppDrawerCoach> {
                               FirebaseAuth.instance.signOut();
                               final SharedPreferences prefs =
                                   await SharedPreferences.getInstance();
-                              await prefs.setBool("isFirstLogin", false);
+                              await prefs.setBool("isFirstLoginC", false);
                               Navigator.of(context).pushAndRemoveUntil(
                                 MaterialPageRoute(
                                     builder: (context) =>

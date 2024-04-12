@@ -9,6 +9,14 @@ class AddCoaching extends StatefulWidget {
   @override
   State<AddCoaching> createState() => _AddCoachingState();
 }
+  TextEditingController _dateController = TextEditingController();
+
+
+  @override
+  void dispose() {
+    _dateController.dispose();
+  }
+
 
 class _AddCoachingState extends State<AddCoaching> {
   @override
@@ -37,14 +45,16 @@ class _AddCoachingState extends State<AddCoaching> {
                   ),
                   SizedBox(height: 20),
                    TextField(
+                        controller: _dateController,
+
                       onTap: () {
                         _showPickerDialog(
                           context,
                         );
                       },
                       decoration: InputDecoration(
-                        hintText: "Date d'anniversaire",
-                        labelText: "anniversaire",
+                        hintText: "Date ",
+                        labelText: "date",
                         prefixIcon: Icon(Icons.date_range),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -119,5 +129,10 @@ class _AddCoachingState extends State<AddCoaching> {
         );
       },
     );
+    if (pickedDate != null) {
+      setState(() {
+        _dateController.text = pickedDate.toString();
+      });
+    }
   }
 }
