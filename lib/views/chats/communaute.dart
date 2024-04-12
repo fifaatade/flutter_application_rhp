@@ -14,12 +14,12 @@ class Message {
   });
 }
 
-class ChatScreen extends StatefulWidget {
+class ChatScreenCom extends StatefulWidget {
   @override
-  State<ChatScreen> createState() => _ChatScreenState();
+  State<ChatScreenCom> createState() => _ChatScreenState();
 }
 
-class _ChatScreenState extends State<ChatScreen> {
+class _ChatScreenState extends State<ChatScreenCom> {
   final TextEditingController _messageController = TextEditingController();
   late final DateTime now;
   late final String formattedTime;
@@ -49,23 +49,6 @@ class _ChatScreenState extends State<ChatScreen> {
           preferredSize: Size.fromHeight(60.0),
           child: AppBar(
             elevation: 0,
-            actions: [
-              Builder(
-                builder: (context) => IconButton(
-                  icon: Icon(
-                    Icons.video_call_rounded,
-                    size: 25,
-                    color: Colors.black,
-                  ),
-                  onPressed: () => {},
-                  tooltip:
-                      MaterialLocalizations.of(context).openAppDrawerTooltip,
-                ),
-              ),
-              SizedBox(
-                width: 10,
-              )
-            ],
             automaticallyImplyLeading: false,
             backgroundColor: Theme.of(context).colorScheme.tertiary,
             foregroundColor: Theme.of(context).colorScheme.onTertiary,
@@ -88,7 +71,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
                 Expanded(
                   child: Text(
-                    "Discussion",
+                    "Communauté",
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
@@ -184,19 +167,42 @@ class _MessageListState extends State<MessageList> {
                 ? MainAxisAlignment.end
                 : MainAxisAlignment.start,
             children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: message.sender == true
-                        ? Theme.of(context).colorScheme.primary.withOpacity(0.7)
-                        : Colors.grey.shade400),
-                child: Text(
-                  message.content,
-                  style: TextStyle(
-                      color:
-                          message.sender == true ? Colors.white : Colors.black),
-                ),
+              Row(
+                children: [
+                  if (message.sender == false)
+                    CircleAvatar(
+                      backgroundColor: message.sender == true
+                          ? Theme.of(context).colorScheme.primary
+                          : Colors.blue.shade300,
+                      child: Text("M"),
+                    ),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: message.sender == true
+                            ? Theme.of(context)
+                                .colorScheme
+                                .primary
+                                .withOpacity(0.7)
+                            : Colors.grey.shade400),
+                    child: Text(
+                      message.content,
+                      style: TextStyle(
+                          color: message.sender == true
+                              ? Colors.white
+                              : Colors.black),
+                    ),
+                  ),
+                  if (message.sender == true)
+                    CircleAvatar(
+                      backgroundColor: message.sender == true
+                          ? Theme.of(context).colorScheme.primary
+                          : Colors.blue.shade300,
+                      child: Text("M"),
+                    ),
+                ],
               ),
             ],
           ),

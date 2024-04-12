@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application_rhp/views/auth/login.dart';
 import 'package:flutter_application_rhp/views/beneficiaire/connBenef.dart';
 import 'package:flutter_application_rhp/views/beneficiaire/inscriptionBenef.dart';
+import 'package:flutter_application_rhp/views/chats/communaute.dart';
 import 'package:flutter_application_rhp/views/chats/discussion.dart';
 import 'package:flutter_application_rhp/views/coachs/inscriptionCoach.dart';
 import 'package:flutter_application_rhp/views/connection_side.dart';
@@ -137,7 +138,11 @@ class _AppDrawerBenefState extends State<AppDrawerBenef> {
                                 style: TextStyle(
                                   fontSize: 17.0,
                                 )),
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => ChatScreenCom(),
+                              ));
+                            },
                           ),
                           ListTile(
                             textColor: Colors.black.withOpacity(0.9),
@@ -179,7 +184,6 @@ class _AppDrawerBenefState extends State<AppDrawerBenef> {
                       ),
                       Column(
                         children: [
-
                           ListTile(
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),
