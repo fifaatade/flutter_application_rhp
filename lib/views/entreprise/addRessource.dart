@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application_rhp/components/app_drawer.dart';
@@ -15,6 +18,24 @@ class AddRessource extends StatefulWidget {
 
 class _AddRessourceState extends State<AddRessource> {
   bool loading = false;
+  TextEditingController _documentComtroller = TextEditingController();
+  TextEditingController _nameComtroller = TextEditingController();
+  TextEditingController _descriptionComtroller = TextEditingController();
+  Future<File?> pickFile() async {
+    final result = await FilePicker.platform.pickFiles(
+        allowMultiple:
+            false); // Set allowMultiple to true for picking multiple files
+
+    if (result != null) {
+      final platformFile = result.files.first;
+      if (platformFile != null) {
+        final file = File(platformFile.path!);
+        return file;
+      }
+    }
+
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +81,7 @@ class _AddRessourceState extends State<AddRessource> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                         decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(
+                      contentPadding: EdgeInsets.symmetric(
                           vertical: 50.0, horizontal: 10.0),
                       hintText: "Description",
                       hintStyle: TextStyle(color: Colors.black),
@@ -76,16 +97,28 @@ class _AddRessourceState extends State<AddRessource> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
+                        onTap: () async {
+                          final file = await pickFile();
+
+                          if (file != null) {
+                            // Do something with the picked file, e.g., display its name or upload it
+                            _documentComtroller.text = file.path;
+                            print('Picked file: ${file.path}');
+                          } else {
+                            print('No file picked.');
+                          }
+                        },
+                        readOnly: true,
                         decoration: InputDecoration(
-                      hintText: "Document",
-                      hintStyle: TextStyle(color: Colors.black),
-                      labelText: "Ajouter un document",
-                      labelStyle: TextStyle(color: Colors.black),
-                      prefixIcon: Icon(Icons.attach_file),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    )),
+                          hintText: "Document",
+                          hintStyle: TextStyle(color: Colors.black),
+                          labelText: "Ajouter un document",
+                          labelStyle: TextStyle(color: Colors.black),
+                          prefixIcon: Icon(Icons.attach_file),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        )),
                   ),
                   SizedBox(height: 15),
                   Row(
