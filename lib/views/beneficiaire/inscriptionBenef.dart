@@ -288,5 +288,10 @@ class _InscriptionBenefState extends State<InscriptionBenef> {
         );
       },
     );
+    if (pickedDate != null) {
+      setState(() {
+        _birthdayController.text = pickedDate.toString();
+      });
+    }
   }
 }
