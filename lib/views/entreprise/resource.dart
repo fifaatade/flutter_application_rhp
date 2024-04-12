@@ -1,40 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_rhp/components/appDrawerBenef.dart';
-import 'package:flutter_application_rhp/components/app_drawer.dart';
 import 'package:flutter_application_rhp/components/customAppBar.dart';
 
-class EnterprisePage extends StatefulWidget {
-  const EnterprisePage({super.key});
+class Ressource extends StatefulWidget {
+  const Ressource({super.key});
 
   @override
-  State<EnterprisePage> createState() => _EnterprisePageState();
+  State<Ressource> createState() => _RessourceState();
 }
-  final events = [
-    {
-      "speaker": "Opportunité 1",
-      "date": "Nous recherchons des profils / CVs ...",
-      "subject": "www.opportunities.com",
-    },
-    {
-      "speaker": "Opportunité 2",
-      "date": "Nous sommes à la recherche d’une Chargée  ...",
-      "subject": "www.share.com",
-    },
-    {
-      "speaker": "Opportunité 3",
-      "date": "les sites internet spécialisés ou sur les ...",
-      "subject": "www.reseau.com",
-    },
-  ];
 
-class _EnterprisePageState extends State<EnterprisePage> {
+class _RessourceState extends State<Ressource> {
   @override
+    final events = [
+    {
+      "speaker": "Ressource 1",
+      "date": "Il s'agit d'un livre de développement personnel...",
+      "subject": "www.livre.com",
+    },
+    {
+      "speaker": "Ressource 2",
+      "date": "Le leadership au service de vos convictions  ...",
+      "subject": "www.leader.com",
+    },
+    
+  ];
   Widget build(BuildContext context) {
-    return Scaffold(
+     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
         child: CustomAppBar(
-          title: "Opportunités",
+          title: "Ressources",
           goBack: true,
         ),
       ),
@@ -52,7 +47,7 @@ class _EnterprisePageState extends State<EnterprisePage> {
 
           return Card(
             child: ListTile(
-              leading: Icon(Icons.share),
+              leading: Icon(Icons.book_online_outlined),
               title: Text("$speaker ($date)"),
               subtitle: Text("$subject"),
               trailing: Icon(Icons.info),
@@ -64,5 +59,6 @@ class _EnterprisePageState extends State<EnterprisePage> {
 
     
     );
+ 
   }
 }

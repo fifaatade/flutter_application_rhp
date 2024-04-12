@@ -7,8 +7,10 @@ import 'package:flutter_application_rhp/views/beneficiaire/inscriptionBenef.dart
 import 'package:flutter_application_rhp/views/coachs/inscriptionCoach.dart';
 import 'package:flutter_application_rhp/views/connection_side.dart';
 import 'package:flutter_application_rhp/views/entreprise/addRessource.dart';
+import 'package:flutter_application_rhp/views/entreprise/coachingList.dart';
 import 'package:flutter_application_rhp/views/entreprise/createProgram.dart';
 import 'package:flutter_application_rhp/views/entreprise/enterprisePage.dart';
+import 'package:flutter_application_rhp/views/entreprise/resource.dart';
 import 'package:flutter_application_rhp/views/entreprise/shareOpportunities.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_application_rhp/components/methods.dart';
@@ -101,7 +103,7 @@ class _AppDrawerBenefState extends State<AppDrawerBenef> {
                             )),
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => EnterprisePage()));
+                              builder: (context) => CoachingList()));
                         },
                       ),
                       const Divider(
@@ -143,7 +145,7 @@ class _AppDrawerBenefState extends State<AppDrawerBenef> {
                             onTap: () {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                    builder: (context) => const EnterprisePage()),
+                                    builder: (context) => const Ressource()),
                               );
                             },
                           ),
