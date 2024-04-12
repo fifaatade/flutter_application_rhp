@@ -23,7 +23,7 @@ class _CoachState extends State<Coach> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
         child: CustomAppBar(
-          title: "Hey,",
+          title: "",
           goBack: false,
           colr: Color(0xFF0a3622),
         ),
@@ -60,7 +60,7 @@ class _CoachState extends State<Coach> {
                       topLeft: Radius.circular(15),
                       topRight: Radius.circular(15))),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "C'est quoi RHP?",
@@ -77,28 +77,7 @@ class _CoachState extends State<Coach> {
                     "Cette application vise à assurer le suivi et l'accompagnement des filles après leur participation au programme Reveal Her Potential. L’utilisateur dans cette application  se retrouve dans un espace convivial où les bénéficaires continuent d’accéder à un soutien et un appuie constant pour la réalisation effective de leur objectif entreprenarial.",
                     textAlign: TextAlign.justify,
                   ),
-                  Spacer(),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                padding: EdgeInsets.symmetric(vertical: 22),
-                                backgroundColor:
-                                    Theme.of(context).colorScheme.primary,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20))),
-                            child: Text(
-                              "Créer un Programme",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => CreateProgram()));
-                            }),
-                      ),
-                    ],
-                  ),
+                  
                 ],
               ),
             )

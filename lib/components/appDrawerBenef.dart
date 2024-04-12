@@ -8,6 +8,7 @@ import 'package:flutter_application_rhp/views/coachs/inscriptionCoach.dart';
 import 'package:flutter_application_rhp/views/connection_side.dart';
 import 'package:flutter_application_rhp/views/entreprise/addRessource.dart';
 import 'package:flutter_application_rhp/views/entreprise/createProgram.dart';
+import 'package:flutter_application_rhp/views/entreprise/enterprisePage.dart';
 import 'package:flutter_application_rhp/views/entreprise/shareOpportunities.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_application_rhp/components/methods.dart';
@@ -54,7 +55,7 @@ class _AppDrawerBenefState extends State<AppDrawerBenef> {
                       CircleAvatar(
                         radius: 30.0,
                         child: Text(
-                          getInitials("John Doe"),
+                          getInitials("Myriam ADE"),
                           style: const TextStyle(fontSize: 20),
                         ),
                       ),
@@ -64,7 +65,7 @@ class _AppDrawerBenefState extends State<AppDrawerBenef> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "John Doe",
+                            "Myriam ADE",
                             style: TextStyle(
                                 fontSize: 17.0,
                                 color: Colors.black.withOpacity(0.9),
@@ -100,7 +101,7 @@ class _AppDrawerBenefState extends State<AppDrawerBenef> {
                             )),
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => CreateProgram()));
+                              builder: (context) => EnterprisePage()));
                         },
                       ),
                       const Divider(
@@ -142,7 +143,7 @@ class _AppDrawerBenefState extends State<AppDrawerBenef> {
                             onTap: () {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                    builder: (context) => const AddRessource()),
+                                    builder: (context) => const EnterprisePage()),
                               );
                             },
                           ),
@@ -158,7 +159,7 @@ class _AppDrawerBenefState extends State<AppDrawerBenef> {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        const ShareOpportunitie()),
+                                        const EnterprisePage()),
                               );
                             },
                           ),
@@ -171,19 +172,7 @@ class _AppDrawerBenefState extends State<AppDrawerBenef> {
                       ),
                       Column(
                         children: [
-                          ListTile(
-                            textColor: Colors.black.withOpacity(0.9),
-                            iconColor: Colors.black.withOpacity(0.9),
-                            leading: const Icon(Icons.settings_outlined),
-                            title: Text('Paramètres',
-                                style: TextStyle(
-                                  fontSize: 17.0,
-                                )),
-                            onTap: () {
-                              Navigator.pop(context);
-                              Navigator.pushReplacementNamed(context, '/sale');
-                            },
-                          ),
+
                           ListTile(
                             textColor: Colors.black.withOpacity(0.9),
                             iconColor: Colors.black.withOpacity(0.9),
@@ -196,7 +185,7 @@ class _AppDrawerBenefState extends State<AppDrawerBenef> {
                               FirebaseAuth.instance.signOut();
                               final SharedPreferences prefs =
                                   await SharedPreferences.getInstance();
-                              await prefs.setBool("isFirstLogin", false);
+                              await prefs.setBool("isFirstLoginB", false);
                               Navigator.of(context).pushAndRemoveUntil(
                                 MaterialPageRoute(
                                     builder: (context) =>

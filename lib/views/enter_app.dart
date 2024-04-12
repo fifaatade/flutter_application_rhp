@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:flutter_application_rhp/views/beneficiaire/benef.dart';
+import 'package:flutter_application_rhp/views/coachs/coach.dart';
 import 'package:flutter_application_rhp/views/connection_side.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +29,8 @@ class _EnterAppState extends State<EnterApp> {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
       bool? isFirstTime = await prefs.getBool("isFirstTime");
       bool? isFirstLogin = await prefs.getBool("isFirstLogin");
+      bool? isFirstLoginC = await prefs.getBool("isFirstLoginC");
+      bool? isFirstLoginB = await prefs.getBool("isFirstLoginB");
 
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(
@@ -39,6 +43,20 @@ class _EnterAppState extends State<EnterApp> {
         MaterialPageRoute(
           builder: (context) =>
               isFirstLogin == false ? ConnexionSide() : Home(),
+        ),
+        (route) => false,
+      );
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(
+          builder: (context) =>
+              isFirstLoginC == false ? ConnexionSide() : Coach(),
+        ),
+        (route) => false,
+      );
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(
+          builder: (context) =>
+              isFirstLoginB == false ? ConnexionSide() : Benef(),
         ),
         (route) => false,
       );

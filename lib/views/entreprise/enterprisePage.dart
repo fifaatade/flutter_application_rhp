@@ -16,13 +16,15 @@ class _EnterprisePageState extends State<EnterprisePage> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
         child: CustomAppBar(
-          title: "Programme",
+          title: "Opportunités",
           goBack: false,
         ),
       ),
       backgroundColor: Color.fromARGB(14, 0, 0, 0),
       endDrawer: AppDrawer(),
-      body: Container(),
+      body: Container(
+        
+      ),
     );
   }
 }
