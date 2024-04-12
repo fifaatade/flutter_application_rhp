@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_rhp/components/customAppBar.dart';
 import 'package:intl/intl.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class Message {
   final bool sender;
@@ -42,6 +44,27 @@ class _ChatScreenState extends State<ChatScreen> {
     });
   }
 
+  final imagePicker = ImagePicker();
+
+  Future<bool> requestPermissions() async {
+    var cameraStatus = await Permission.camera.request();
+    var microphoneStatus = await Permission.microphone.request();
+    return cameraStatus.isGranted && microphoneStatus.isGranted;
+  }
+
+  Future pickVideo() async {
+    final hasPermission = await requestPermissions();
+    if (!hasPermission) {
+      return null;
+    }
+
+    final pickedFile = await imagePicker.pickVideo(
+      source: ImageSource.camera,
+      maxDuration: const Duration(minutes: 2),
+    );
+    return pickedFile;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +80,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     size: 25,
                     color: Colors.black,
                   ),
-                  onPressed: () => {},
+                  onPressed: () => {pickVideo()},
                   tooltip:
                       MaterialLocalizations.of(context).openAppDrawerTooltip,
                 ),

@@ -38,9 +38,16 @@ dependencies:
   firebase_auth: ^4.17.4
   #cloud_firestore: ^4.15.8
   get: ^4.6.6
-  stream_video_flutter: ^0.3.6
-  jitsi_meet_flutter_sdk: ^0.3.0
+  image_picker: ^1.0.8
   file_picker: ^8.0.0+1
+  permission_handler: ^11.3.1
+  video_player: ^2.8.6
+  intl: ^0.19.0
+  # stream_video_flutter: ^0.3.6
+  # jitsi_meet_flutter_sdk: ^0.3.0
+  # apivideo_live_stream: ^1.2.0
+  # wakelock_plus: ^1.2.4
+  # flutterimagevideopicker: ^0.0.4
 
 dev_dependencies:
   flutter_test:
